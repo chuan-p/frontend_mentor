@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(189, 41%, 84%);
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Space Mono", monospace;
+}
+
+main {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5em 3em;
+    border-radius: 1em;
+    width: 720px;
+    height: 360px;
+    box-shadow: 0 0 1em hsla(185, 100%, 5%, 0.1);
+}
+
+button {
+    border-style: hidden;
+    font-family: "Space Mono", monospace;
+    cursor: pointer;
+    text-shadow: 0px 0px 0.02em;
+}
+embed {
+    position: relative;
+    width: calc(10%-0.5em);
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+/* left side */
+
+.calc {
+    display: grid;
+    user-select: none;
+}
+
+input {
+    -moz-appearance: textfield;
+    background-color: hsl(185, 41%, 97%);
+    border-style: none;
+    padding: 0%;
+    border-radius: 0.2em;
+    outline-style: none;
+    font-family: "Space Mono", monospace;
+    color: hsl(183, 100%, 15%);
+}
+
+input:focus {
+    outline: solid 2px #73a6ff;
+}
+
+.calc * h1 {
+    user-select: none;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: hsl(184, 14%, 56%);
+}
+
+.billInput,
+.pplInput {
+    font-size: 1.3em;
+    font-weight: 700;
+    width: 70%;
+    font: hsl(183, 100%, 15%);
+    text-align: end;
+    padding-right: 0.5em;
+    box-shadow: 0 0 2em hsl(189, 41%, 84%, 0.1);
+}
+
+.btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5% 2%;
+    width: 80%;
+    text-align: center;
+}
+
+.btns > * {
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 0 0 0.5em hsl(189, 41%, 84%, 0.5);
+}
+
+.btns > button {
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    padding: 4%;
+    margin: 2%;
+    border-radius: 0.2em;
+}
+
+.btns > button.activated {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    box-shadow: inset 0 0 1em hsl(183, 100%, 15%, 0.1);
+}
+
+.customRatio {
+    text-align: center;
+    width: 100%;
+}
+.customRatio.activated {
+    background-color: hsl(172, 67%, 45%);
+}
+.customRatio:focus {
+    background-color: hsl(185, 41%, 97%);
+}
+
+.error {
+    outline: solid 2px #ff4b4b;
+}
+
+.customRatio.error {
+    background-color: hsl(185, 41%, 97%);
+}
+
+/* right side */
+
+.result {
+    display: grid;
+    align-items: start;
+    background-color: hsl(183, 100%, 15%);
+    padding: 2em 1.8em;
+    padding-bottom: 1.2em;
+    border-radius: 1em;
+    box-shadow: 0 0 1em hsla(189, 41%, 84%, 0.5);
+    text-shadow: 0px 0px 0.02em;
+}
+
+.display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    text-align: left;
+    height: 2em;
+}
+
+.display > h1 {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    grid-area: 1/1/1/1;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0%;
+    margin: 0%;
+    height: 1em;
+}
+
+.display > h2 {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    color: hsl(184, 14%, 56%);
+    grid-area: 2/1/2/1;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.1em;
+    margin: 0%;
+    height: 1em;
+}
+
+.display > p {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: hsl(172, 67%, 45%);
+    grid-area: 1/2/3/2;
+    text-align: right;
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 0%;
+    margin: 0%;
+}
+
+.result > button {
+    align-self: end;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    height: 2rem;
+}
+
+.activated {
+    background-color: lightblue;
+}
+
+button:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+@media all and (max-width: 720px) {
+    body {
+        height: auto;
+    }
+    main {
+        width: 350px;
+        height: auto;
+        padding: 0em 2em;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .btns {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .billInput,
+    .pplInput {
+        width: 85%;
+    }
+    .btns {
+        width: 100%;
+    }
+    .calc {
+        margin: 1em auto;
+    }
+    .calc > div {
+        padding-bottom: 1em;
+    }
+    .result {
+        height: 75%;
+    }
+}

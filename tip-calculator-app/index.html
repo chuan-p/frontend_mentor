@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Tip calculator app</title>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="calc">
+                <div class="bill">
+                    <h1>Bill</h1>
+                    <embed src="./images/icon-dollar.svg" type="" />
+                    <input type="number" class="billInput" min="0" value="0" />
+                </div>
+                <div class="ratio">
+                    <h1>Select Tip %</h1>
+                    <div class="btns">
+                        <button class="btn activated">5%</button>
+                        <button class="btn">10%</button>
+                        <button class="btn">15%</button>
+                        <button class="btn">25%</button>
+                        <button class="btn">50%</button>
+                        <input
+                            type="number"
+                            placeholder="Custom"
+                            class="customRatio"
+                            min="0"
+                            max="100"
+                        />
+                    </div>
+                </div>
+                <div class="ppl">
+                    <h1>Number of People</h1>
+                    <embed src="./images/icon-person.svg" type="" />
+                    <input type="number" class="pplInput" min="1" value="1" />
+                </div>
+            </div>
+            <div class="result">
+                <div class="display">
+                    <h1>Tip Amount</h1>
+                    <h2>/ person</h2>
+                    <p class="tipperperson">$0</p>
+                </div>
+                <div class="display">
+                    <h1>Total</h1>
+                    <h2>/ person</h2>
+                    <p class="totalperperson">$0</p>
+                </div>
+                <button class="reset">RESET</button>
+            </div>
+        </main>
+        <!-- <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+        </div> -->
+        <script src="script.js" async defer></script>
+    </body>
+</html>
